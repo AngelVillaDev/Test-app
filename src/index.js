@@ -15,7 +15,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 //paths
-app.use('/api/telas',require('./routes/routes'));
+app.use('/api/pedidos',require('./routes/routes'));
 
 //Server Initializer 
 
