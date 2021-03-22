@@ -1,0 +1,12 @@
+[
+    {
+        "id": "1",
+        "colorTela": "Rojo",
+        "cantidadTelaMetros":1000
+    },
+    {
+        "id": "2",
+        "colorTela": "Azul",
+        "cantidadTelaMetros":2000
+    }
+]

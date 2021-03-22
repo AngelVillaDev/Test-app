@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 });
 
 **/
-const telas = require('./data.json');
+const telas = require('./telas.json');
 console.log(telas);
 
 router.get('/', (req,res) => {
@@ -31,8 +31,9 @@ router.get('/:id', (req,res) => {
 })
 
 router.post('/', (req,res) => {
-    const {colorTela, cantidadTelaMetros, precioPorMetro} = req.body;
-    if(colorTela && cantidadTelaMetros && precioPorMetro ){
+    const {colorTela, cantidadTelaMetros} = req.body;
+
+    if(colorTela && cantidadTelaMetros){
         const id = telas.length +1;
         const nuevaTela = {...req.body, id}
         telas.push(nuevaTela);
