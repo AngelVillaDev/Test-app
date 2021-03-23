@@ -8,7 +8,7 @@ const morgan = require('morgan');
 //Configurations
 
 app.set('port',3000);
-app.set('json spaces',2)
+app.set('json spaces',2);
 
 //Middlewares
 app.use(morgan('dev'));
