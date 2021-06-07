@@ -19,7 +19,6 @@ router.get('/', (req,res) => {
     res.json(pedidos);
 })
 
-// Get por id
 
 router.get('/:id', (req,res) => {
     const {id}= req.params;
@@ -31,97 +30,118 @@ router.get('/:id', (req,res) => {
     //const id = req.params.id;
 });
 
-//Get por cantidades
-
-router.get('/:id/cantidadTelaMetros/', (req,res) => {
+router.get('/:id/descripcion/', (req,res) => {
     const {id}= req.params;
     pedidos.forEach(pedido => {
         if(pedido.id == id){
-        res.json(pedido.cantidadTelaMetros);
+        res.json(pedido.descripcion);
         }
     });
 });
 
-router.get('/:id/cantidadAgujetasPares/', (req,res) => {
+router.get('/:id/nombre/', (req,res) => {
     const {id}= req.params;
     pedidos.forEach(pedido => {
         if(pedido.id == id){
-        res.json(pedido.cantidadAgujetasPares);
+        res.json(pedido.nombre);
         }
     });
 });
 
-router.get('/:id/cantidadSuelas/', (req,res) => {
+router.get('/:id/estilo/', (req,res) => {
     const {id}= req.params;
     pedidos.forEach(pedido => {
         if(pedido.id == id){
-        res.json(pedido.cantidadSuelas);
+        res.json(pedido.estilo);
         }
     });
 });
 
-router.get('/:id/cantidadZapatos/', (req,res) => {
+router.get('/:id/precio/', (req,res) => {
     const {id}= req.params;
     pedidos.forEach(pedido => {
         if(pedido.id == id){
-        res.json(pedido.cantidadZapatos);
+        res.json(pedido.precio);
         }
     });
 });
 
-//Get por colores
-
-router.get('/:id/colorTela/', (req,res) => {
+router.get('/:id/cantidad/', (req,res) => {
     const {id}= req.params;
     pedidos.forEach(pedido => {
         if(pedido.id == id){
-        res.json(pedido.colorTela);
+        res.json(pedido.cantidad);
         }
     });
 });
 
-router.get('/:id/colorAgujetas/', (req,res) => {
+router.get('/:id/contenidoAlcoholico/', (req,res) => {
     const {id}= req.params;
     pedidos.forEach(pedido => {
         if(pedido.id == id){
-        res.json(pedido.colorAgujetas);
+        res.json(pedido.contenidoAlcoholico);
         }
     });
 });
 
-router.get('/:id/colorSuelas/', (req,res) => {
+router.get('/:id/caracteristicas/', (req,res) => {
     const {id}= req.params;
     pedidos.forEach(pedido => {
         if(pedido.id == id){
-        res.json(pedido.colorSuelas);
+        res.json(pedido.caracteristicas);
         }
     });
 });
 
-//Get por costos
-
-router.get('/:id/costoPorZapatos/', (req,res) => {
+router.get('/:id/lupulos/', (req,res) => {
     const {id}= req.params;
     pedidos.forEach(pedido => {
         if(pedido.id == id){
-        res.json(pedido.costoPorZapatos);
+        res.json(pedido.lupulos);
         }
     });
 });
 
-router.get('/:id/costoTotal/', (req,res) => {
+router.get('/:id/imgPrincipal/', (req,res) => {
     const {id}= req.params;
     pedidos.forEach(pedido => {
         if(pedido.id == id){
-        const costoTotalPedido = pedido.costoPorZapatos * pedido.cantidadZapatos;
-        res.json({"costoTotal": costoTotalPedido});
+        res.json(pedido.imgPrincipal);
         }
     });
 });
+
+router.get('/:id/imgGaleria1/', (req,res) => {
+    const {id}= req.params;
+    pedidos.forEach(pedido => {
+        if(pedido.id == id){
+        res.json(pedido.imgGaleria1);
+        }
+    });
+});
+
+router.get('/:id/imgGaleria2/', (req,res) => {
+    const {id}= req.params;
+    pedidos.forEach(pedido => {
+        if(pedido.id == id){
+        res.json(pedido.imgGaleria2);
+        }
+    });
+});
+
+router.get('/:id/imgGaleria3/', (req,res) => {
+    const {id}= req.params;
+    pedidos.forEach(pedido => {
+        if(pedido.id == id){
+        res.json(pedido.imgGaleria3);
+        }
+    });
+});
+
 
 
 //Post General
-
+/*
 router.post('/', (req,res) => {
     const {cantidadTelaMetros, cantidadAgujetasPares, cantidadSuelas, cantidadZapatos, colorTela,
         colorAgujetas, colorSuelas, costoPorZapatos} = req.body;
@@ -131,7 +151,7 @@ router.post('/', (req,res) => {
         const id = telas.length +1;
         const nuevoPedido = {...req.body, id}
         telas.push(nuevoPedido);
-        //console.log(nuevaTela);
+        //console.log(nuevaTela);  
         res.status(200).json(pedidos);
     }
     else{
@@ -139,5 +159,5 @@ router.post('/', (req,res) => {
         //res.send('Error 32: No data');
     }
 })
-
+*/
 module.exports = router;
